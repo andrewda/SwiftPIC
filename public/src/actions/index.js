@@ -26,7 +26,7 @@ export function signinUser({ username, password }) {
 				// - save the JWT token
 				localStorage.setItem('token', response.data.token);
 				// - redirect ro the route '/posts'
-				browserHistory.push('/posts');
+				browserHistory.push('/');
 
 			})
 			.catch((error) => {
@@ -54,7 +54,7 @@ export function signupUser({ username, email, password }) {
 				// - save the JWT token
 				localStorage.setItem('token', response.data.token);
 				// - redirect to the route '/posts'
-				browserHistory.push('/posts');
+				browserHistory.push('/');
 			})
 			.catch((error) => {
 				dispatch(authError(error.response.data.error));
@@ -115,7 +115,7 @@ export function uploadImage(image) {
 						payload: response.data
 					});
 					
-					browserHistory.push(`/posts/${response.data.user}/${response.data.url}`);
+					browserHistory.push(`/${response.data.user}/${response.data.url}`);
 				})
 				.catch((error) => {
 					dispatch({

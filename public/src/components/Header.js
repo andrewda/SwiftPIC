@@ -42,10 +42,10 @@ class Header extends Component {
 				<Link className="nav-item" to="/signout" key={1}>
 					<MenuItem onTouchTap={this.handleClose.bind(this)}>Sign Out</MenuItem>
 				</Link>,
-				<Link className="nav-item" to="/posts" key={2}>
+				<Link className="nav-item" to="/" key={2}>
 					<MenuItem onTouchTap={this.handleClose.bind(this)}>Recent Posts</MenuItem>
 				</Link>,
-				<Link className="nav-item" to="/posts/new" key={3}>
+				<Link className="nav-item" to="/new" key={3}>
 					<MenuItem onTouchTap={this.handleClose.bind(this)}>New Post</MenuItem>
 				</Link>
 			];

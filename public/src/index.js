@@ -40,16 +40,15 @@ ReactDOM.render(
 		<Provider store={store}>
 			<Router history={browserHistory}>
 				<Route path="/" component={App}>
-					<IndexRoute component={Welcome} />
+					<IndexRoute component={PostsList} />
 
-					<Route path="posts" component={PostsList} />
-					<Route path="posts/new" component={RequireAuth(PostsNew)} />
-					<Route path="posts/:user" component={UsersShow} />
-					<Route path="posts/:user/:url" component={PostsShow} onEnter={onPostsEnter} />
-					
 					<Route path="signin" component={SignIn} />
 					<Route path="signout" component={SignOut} />
 					<Route path="signup" component={SignUp} />
+
+					<Route path="new" component={RequireAuth(PostsNew)} />
+					<Route path=":user" component={UsersShow} />
+					<Route path=":user/:url" component={PostsShow} onEnter={onPostsEnter} />
 				</Route>
 			</Router>
 		</Provider>
