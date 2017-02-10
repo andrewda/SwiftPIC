@@ -39,22 +39,27 @@ class Header extends Component {
 	renderItems() {
 		if (this.props.authenticated) {
 			return [
-				<Link className="nav-item" to="/signout" key={1}>
-					<MenuItem onTouchTap={this.handleClose.bind(this)}>Sign Out</MenuItem>
-				</Link>,
-				<Link className="nav-item" to="/" key={2}>
+				<Link className="nav-item" to="/" key={1}>
 					<MenuItem onTouchTap={this.handleClose.bind(this)}>Recent Posts</MenuItem>
 				</Link>,
-				<Link className="nav-item" to="/new" key={3}>
+				<Link className="nav-item" to="/new" key={2}>
 					<MenuItem onTouchTap={this.handleClose.bind(this)}>New Post</MenuItem>
+				</Link>,
+				<hr key={3}></hr>,
+				<Link className="nav-item" to="/signout" key={4}>
+					<MenuItem onTouchTap={this.handleClose.bind(this)}>Sign Out</MenuItem>
 				</Link>
 			];
 		} else {
 			return [
-				<Link className="nav-item" to="/signin" key={1}>
+				<Link className="nav-item" to="/" key={1}>
+					<MenuItem onTouchTap={this.handleClose.bind(this)}>Recent Posts</MenuItem>
+				</Link>,
+				<hr key={2}></hr>,
+				<Link className="nav-item" to="/signin" key={3}>
 					<MenuItem onTouchTap={this.handleClose.bind(this)}>Sign In</MenuItem>
 				</Link>,
-				<Link className="nav-item" to="/signup" key={2}>
+				<Link className="nav-item" to="/signup" key={4}>
 					<MenuItem onTouchTap={this.handleClose.bind(this)}>Sign Up</MenuItem>
 				</Link>
 			];
